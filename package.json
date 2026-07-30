@@ -1,0 +1,13 @@
+{
+  "name": "download1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Render web service for downloading a Scratch project.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

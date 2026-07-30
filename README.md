@@ -1,19 +1,31 @@
 # Download1
 
-A small static download page for a Scratch 3 project.
+A small Node.js web service for downloading a Scratch 3 project.
 
-## Deploy to Render
+## Create the Render Web Service
 
-1. Create a GitHub repository and upload everything in this folder.
-2. In the Render Dashboard, choose **New > Blueprint**.
-3. Connect the GitHub repository and deploy the `download1` service.
-4. If the name is available, the site will use `https://download1.onrender.com`.
+In the Render Dashboard, choose **New > Web Service**, connect this repository,
+and enter:
 
-Render will automatically redeploy the site whenever the connected branch changes.
+- Name: `download1`
+- Language: `Node`
+- Branch: `main`
+- Region: `Oregon (US West)`
+- Root Directory: leave blank
+- Build Command: `npm install`
+- Start Command: `npm start`
+- Instance Type: `Free`
+- Environment Variables: none required
+- Health Check Path under Advanced: `/health`
 
-## Manual Static Site setup
+If the name is available, the site will use `https://download1.onrender.com`.
+Render will automatically redeploy it whenever the connected branch changes.
 
-If you create a Render Static Site instead of using the Blueprint, use:
+## Run locally
 
-- Build Command: `echo "Static site ready"`
-- Publish Directory: `site`
+```sh
+npm start
+```
+
+The server uses Render's `PORT` environment variable and defaults to port
+`10000` locally.
